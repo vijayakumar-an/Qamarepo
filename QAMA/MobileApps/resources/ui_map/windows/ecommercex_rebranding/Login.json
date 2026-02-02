@@ -1,80 +1,53 @@
 {
-  "login_page_title": {
+  "app_launch_indicator": {
     "locator": {
-      "xpath": "//Text[@Name='Sign in to your account']"
+      "xpath": "//Text[@Name='Application Loaded']"
     }
   },
 
-  "email_input": {
+  "generic_action_button": {
     "locator": {
-      "id": "loginEmailInput",
-      "xpath": [
-        "//Edit[@Name='Email']",
-        "//Edit[@AutomationId='email']"
-      ]
+      "xpath": "//Button[contains(@Name,'Action')]"
     }
   },
 
-  "password_input": {
+  "generic_action_input": {
     "locator": {
-      "id": "loginPasswordInput",
-      "xpath": [
-        "//Edit[@Name='Password']",
-        "//Edit[@AutomationId='password']"
-      ]
+      "xpath": "//Edit[contains(@AutomationId,'actionInput')]"
     }
   },
 
-  "show_password_icon": {
+  "generic_action_submit": {
     "locator": {
-      "xpath": "//Button[@Name='Show password']"
+      "xpath": "//Button[contains(@Name,'Submit')]"
     }
   },
 
-  "login_submit_btn": {
+  "generic_response_container": {
     "locator": {
-      "id": "loginSubmitButton",
-      "xpath": [
-        "//Button[@Name='Sign in']",
-        "//Button[@Name='Login']"
-      ]
+      "xpath": "//Pane[contains(@Name,'Response')]"
     }
   },
 
-  "forgot_password_link": {
+  "generic_success_message": {
     "locator": {
-      "xpath": "//HyperLink[@Name='Forgot password?']"
+      "xpath": "//Text[contains(@Name,'Success') or contains(@Name,'Completed')]"
     }
   },
 
-  "create_account_link": {
+  "generic_error_message": {
     "locator": {
-      "xpath": [
-        "//HyperLink[@Name='Create account']",
-        "//Text[@Name='Create an account']"
-      ]
+      "xpath": "//Text[contains(@Name,'Error') or contains(@Name,'Failed')]"
     }
   },
 
-  "remember_me_checkbox": {
+  "loading_indicator": {
     "locator": {
-      "xpath": "//CheckBox[@Name='Remember me']"
+      "xpath": "//ProgressBar"
     }
   },
 
-  "login_error_message": {
-    "locator": {
-      "xpath": "//Text[contains(@Name,'incorrect') or contains(@Name,'Invalid')]"
-    }
-  },
-
-  "login_success_indicator": {
-    "locator": {
-      "xpath": "//Text[@Name='Welcome back']"
-    }
-  },
-
-  "close_login_btn": {
+  "close_application_button": {
     "locator": {
       "xpath": "//Button[@Name='Close']"
     }

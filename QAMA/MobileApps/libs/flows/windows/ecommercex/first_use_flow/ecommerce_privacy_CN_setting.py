@@ -1,96 +1,76 @@
-# Dummy placeholder for hp_privacy_CN_setting.py
-class PrivacyConsentFlow:
+# Dummy placeholder for ecommerce_generic_action_flow.py
+
+class EcommerceGenericActionFlow:
     """
-    Dummy Privacy & Consent Flow for E-Commerce Application
-    Handles first-use consent and compliance screens
+    Dummy Generic Action Flow for E-Commerce Application
+
+    This flow supports common actions used across test cases:
+    - Application launch
+    - Performing numbered actions
+    - Verifying generic responses
+
+    Mapped directly to test cases 2801–2900
     """
 
-    flow_name = "privacy_consent"
+    flow_name = "ecommerce_generic_action"
 
     # ------------------------
-    # Primary Actions
+    # Application Actions
     # ------------------------
 
-    def click_accept_all(self):
-        """Accept all cookies and data usage"""
+    def open_application(self):
+        """Launch the E-Commerce application"""
         pass
 
-    def click_decline_all(self):
-        """Decline all optional cookies/data"""
+    def close_application(self):
+        """Close the E-Commerce application"""
         pass
 
-    def click_manage_options(self):
-        """Open consent management options"""
+    # ------------------------
+    # Generic Actions
+    # ------------------------
+
+    def perform_action(self, action_number: int):
+        """
+        Perform a generic action based on action number
+        Example: action_number = 1 → Perform action 1
+        """
         pass
 
     # ------------------------
     # Verifications
     # ------------------------
 
-    def verify_privacy_title_visible(self):
-        """Verify privacy title is displayed"""
+    def verify_response_displayed(self):
+        """Verify application response is displayed"""
         pass
 
-    def verify_privacy_subtitle_visible(self):
-        """Verify privacy description text is displayed"""
-        pass
-
-    def get_privacy_title_text(self):
-        """Fetch privacy title text"""
-        return "Privacy & Cookie Preferences"
-
-    def get_privacy_description_1(self):
-        """Fetch first privacy description"""
-        return "We use cookies to improve your shopping experience"
-
-    def get_privacy_description_2(self):
-        """Fetch second privacy description"""
-        return "Your data is handled securely"
-
-    def get_privacy_description_3(self):
-        """Fetch third privacy description"""
-        return "You can manage preferences anytime"
-
-    # ------------------------
-    # Buttons
-    # ------------------------
-
-    def verify_accept_button(self):
-        """Verify accept button is visible"""
-        pass
-
-    def verify_decline_button(self):
-        """Verify decline button is visible"""
-        pass
-
-    def verify_manage_options_button(self):
-        """Verify manage options button is visible"""
+    def verify_action_successful(self, action_number: int):
+        """
+        Verify the result of the performed action
+        """
         pass
 
     # ------------------------
-    # Consent Confirmation
+    # Utility / State Checks
     # ------------------------
 
-    def click_yes_to_all(self):
-        """Confirm yes to all consent options"""
-        pass
+    def is_application_accessible(self):
+        """Check if application is accessible"""
+        return True
 
-    def verify_yes_to_all_button(self):
-        """Verify yes to all button"""
-        pass
+    def get_current_screen_name(self):
+        """Return current screen name"""
+        return "Home Screen"
 
     # ------------------------
     # Navigation
     # ------------------------
 
-    def click_continue(self):
-        """Continue to application"""
+    def navigate_back(self):
+        """Navigate back to previous screen"""
         pass
 
-    def click_done(self):
-        """Finish onboarding"""
-        pass
-
-    def close_application(self):
-        """Close application during onboarding"""
+    def continue_to_next_step(self):
+        """Proceed to next step in the flow"""
         pass
