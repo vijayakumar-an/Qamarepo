@@ -1,59 +1,60 @@
-class OmenXPaths:
+class OmenLocators:
 
-    # ===============================
+    # =========================
     # Application / Window
-    # ===============================
+    # =========================
     OMEN_MAIN_WINDOW = "//Window[@Name='OMEN Gaming Hub']"
-    OMEN_LOADING_SPINNER = "//ProgressBar[@AutomationId='LoadingSpinner']"
+    LOADING_SPINNER = "//ProgressBar[contains(@AutomationId,'Loading')]"
 
-    # ===============================
+    # =========================
     # Dashboard
-    # ===============================
+    # =========================
     DASHBOARD_VIEW = "//Pane[@AutomationId='DashboardView']"
-    DASHBOARD_WIDGET = "//Pane[contains(@AutomationId,'DashboardWidget')]"
+    DASHBOARD_WIDGETS = "//Pane[contains(@AutomationId,'DashboardWidget')]"
 
-    # ===============================
+    # =========================
     # Navigation Tabs
-    # ===============================
-    TAB_PERFORMANCE_CONTROL = "//TabItem[@Name='Performance Control']"
-    TAB_MY_GAMES = "//TabItem[@Name='My Games']"
+    # =========================
+    TAB_PERFORMANCE = "//TabItem[@Name='Performance Control']"
+    TAB_GAMES = "//TabItem[@Name='My Games']"
     TAB_LIGHTING = "//TabItem[@Name='Lighting']"
     TAB_SETTINGS = "//TabItem[@Name='Settings']"
 
-    # ===============================
+    # =========================
     # Performance Control
-    # ===============================
+    # =========================
     PERFORMANCE_VIEW = "//Pane[@AutomationId='PerformanceView']"
 
-    CPU_USAGE_VALUE = "//Text[@AutomationId='CpuUsageValue']"
-    GPU_USAGE_VALUE = "//Text[@AutomationId='GpuUsageValue']"
-    MEMORY_USAGE_VALUE = "//Text[@AutomationId='MemoryUsageValue']"
-    TEMPERATURE_VALUE = "//Text[@AutomationId='TemperatureValue']"
+    CPU_METRIC = "//Text[@AutomationId='CpuUsageValue']"
+    GPU_METRIC = "//Text[@AutomationId='GpuUsageValue']"
+    MEMORY_METRIC = "//Text[@AutomationId='MemoryUsageValue']"
+    TEMPERATURE_METRIC = "//Text[@AutomationId='TemperatureValue']"
 
     PERFORMANCE_MODE_DROPDOWN = "//ComboBox[@AutomationId='PerformanceModeDropdown']"
-    PERFORMANCE_MODE_BALANCED = "//ListItem[@Name='Balanced']"
-    PERFORMANCE_MODE_PERFORMANCE = "//ListItem[@Name='Performance']"
-    PERFORMANCE_MODE_ECO = "//ListItem[@Name='Eco']"
+    MODE_BALANCED = "//ListItem[@Name='Balanced']"
+    MODE_PERFORMANCE = "//ListItem[@Name='Performance']"
+    MODE_ECO = "//ListItem[@Name='Eco']"
 
-    # ===============================
+    # =========================
     # Games
-    # ===============================
-    GAME_LIBRARY_VIEW = "//Pane[@AutomationId='GameLibraryView']"
+    # =========================
+    GAMES_LIBRARY_VIEW = "//Pane[@AutomationId='GameLibraryView']"
     GAME_TILE = "//ListItem[contains(@AutomationId,'GameTile')]"
     GAME_PLAY_BUTTON = ".//Button[@Name='Play']"
-    GAME_RUNNING_STATUS = "//Text[@AutomationId='GameRunningStatus']"
+    GAME_STATUS_RUNNING = "//Text[contains(@Name,'Running')]"
+    EMPTY_LIBRARY_MESSAGE = "//Text[contains(@Name,'No games')]"
 
-    # ===============================
+    # =========================
     # Lighting
-    # ===============================
+    # =========================
     LIGHTING_VIEW = "//Pane[@AutomationId='LightingView']"
-    KEYBOARD_DEVICE = "//ListItem[@Name='Keyboard']"
-    COLOR_PICKER = "//Button[@AutomationId='ColorPicker']"
+    DEVICE_KEYBOARD = "//ListItem[contains(@Name,'Keyboard')]"
+    COLOR_PICKER_BUTTON = "//Button[@AutomationId='ColorPicker']"
     APPLY_LIGHTING_BUTTON = "//Button[@Name='Apply']"
 
-    # ===============================
+    # =========================
     # Settings
-    # ===============================
+    # =========================
     SETTINGS_VIEW = "//Pane[@AutomationId='SettingsView']"
 
     THEME_DROPDOWN = "//ComboBox[@AutomationId='ThemeDropdown']"
@@ -63,13 +64,14 @@ class OmenXPaths:
     NOTIFICATION_TOGGLE = "//ToggleSwitch[@AutomationId='NotificationToggle']"
     STARTUP_TOGGLE = "//ToggleSwitch[@AutomationId='StartupLaunchToggle']"
 
-    # ===============================
+    # =========================
     # Update
-    # ===============================
-    UPDATE_BANNER = "//Pane[@AutomationId='UpdateBanner']"
+    # =========================
+    UPDATE_BANNER = "//Pane[contains(@AutomationId,'UpdateBanner')]"
     UPDATE_BUTTON = "//Button[@Name='Update']"
 
-    # ===============================
-    # Offline / Warnings
-    # ===============================
+    # =========================
+    # Network / Offline
+    # =========================
     OFFLINE_WARNING = "//Text[contains(@Name,'offline')]"
+    NETWORK_WARNING = "//Text[contains(@Name,'network')]"
