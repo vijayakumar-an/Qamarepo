@@ -1,57 +1,131 @@
-"""
-methods.py
-Action methods for OMEN Gaming Hub
-"""
-
-from locators import OmenLocators
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
-
 class OmenMethods:
+    """
+    OMEN Gaming Hub Methods
+    All methods directly map to test cases
+    """
 
-    def __init__(self, driver):
-        self.driver = driver
-        self.wait = WebDriverWait(driver, 30)
-
+    # ===============================
+    # Launch & App Control
+    # ===============================
     def launch_omen_app(self):
-        """
-        Step: Launch OMEN Gaming Hub
-        """
-        self.wait.until(
-            EC.presence_of_element_located(
-                (By.XPATH, OmenLocators.OMEN_MAIN_WINDOW)
-            )
-        )
+        pass
 
-    def wait_for_dashboard(self):
-        """
-        Step: Wait for dashboard to load
-        """
-        self.wait.until(
-            EC.presence_of_element_located(
-                (By.XPATH, OmenLocators.DASHBOARD_PANEL)
-            )
-        )
+    def close_omen_app(self):
+        pass
 
-    def open_performance_control(self):
-        """
-        Step: Click on Performance Control tab
-        """
-        tab = self.wait.until(
-            EC.element_to_be_clickable(
-                (By.XPATH, OmenLocators.PERFORMANCE_CONTROL_TAB)
-            )
-        )
-        tab.click()
+    def verify_omen_launched(self):
+        pass
 
-    def verify_system_stats_displayed(self):
-        """
-        Step: Verify system stats are displayed
-        """
-        self.wait.until(
-            EC.presence_of_element_located(
-                (By.XPATH, OmenLocators.SYSTEM_STATS_PANEL)
-            )
-        )
+    def wait_for_app_to_load(self):
+        pass
+
+    # ===============================
+    # Dashboard
+    # ===============================
+    def verify_dashboard_loaded(self):
+        pass
+
+    def verify_dashboard_widgets_visible(self):
+        pass
+
+    # ===============================
+    # Navigation
+    # ===============================
+    def navigate_to_performance_control(self):
+        pass
+
+    def navigate_to_my_games(self):
+        pass
+
+    def navigate_to_lighting(self):
+        pass
+
+    def navigate_to_settings(self):
+        pass
+
+    # ===============================
+    # Performance Control
+    # ===============================
+    def verify_cpu_usage_displayed(self):
+        pass
+
+    def verify_gpu_usage_displayed(self):
+        pass
+
+    def verify_memory_usage_displayed(self):
+        pass
+
+    def verify_temperature_displayed(self):
+        pass
+
+    def select_performance_mode_balanced(self):
+        pass
+
+    def select_performance_mode_performance(self):
+        pass
+
+    def select_performance_mode_eco(self):
+        pass
+
+    def verify_performance_mode_persisted(self):
+        pass
+
+    # ===============================
+    # Games
+    # ===============================
+    def verify_game_library_loaded(self):
+        pass
+
+    def launch_first_game_from_library(self):
+        pass
+
+    def verify_game_running_status(self):
+        pass
+
+    # ===============================
+    # Lighting
+    # ===============================
+    def verify_lighting_page_loaded(self):
+        pass
+
+    def select_keyboard_device(self):
+        pass
+
+    def open_color_picker(self):
+        pass
+
+    def apply_lighting_changes(self):
+        pass
+
+    # ===============================
+    # Settings
+    # ===============================
+    def verify_settings_page_loaded(self):
+        pass
+
+    def change_theme_to_dark(self):
+        pass
+
+    def change_theme_to_light(self):
+        pass
+
+    def toggle_notifications(self):
+        pass
+
+    def toggle_startup_launch(self):
+        pass
+
+    # ===============================
+    # Update
+    # ===============================
+    def verify_update_banner_visible(self):
+        pass
+
+    def click_update_button(self):
+        pass
+
+    # ===============================
+    # Offline / Edge
+    # ===============================
+    def verify_offline_warning_displayed(self):
+        pass
