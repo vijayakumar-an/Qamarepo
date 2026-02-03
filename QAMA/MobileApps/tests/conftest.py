@@ -1,25 +1,52 @@
-"""
-conftest.py
-PyTest configuration for Windows OMEN automation
-"""
-
 import pytest
-from appium import webdriver
+import time
+
+from methods.omen_methods import OmenMethods
 
 
 @pytest.fixture(scope="session")
-def windows_driver():
-    desired_caps = {
-        "platformName": "Windows",
-        "deviceName": "WindowsPC",
-        "app": "Root"  # Attaches to desktop session
-    }
+def omen_session():
+    """
+    Session-level fixture
+    - Starts OMEN Gaming Hub once
+    - Closes OMEN after all tests complete
+    """
 
-    driver = webdriver.Remote(
-        command_executor="http://127.0.0.1:4723",
-        desired_capabilities=desired_caps
-    )
+    omen = OmenMethods()
 
-    yield driver
+    # -------------------------
+    # SETUP (Session Start)
+    # -------------------------
+    omen.launch_omen_app()
+    omen.verify_omen_launched()
+    omen.wait_for_app_to_load()
 
-    driver.quit()
+    yield omen
+
+    # -------------------------
+    # TEARDOWN (Session End)
+    # -------------------------
+    omen.close_omen_app()
+
+
+@pytest.fixture(scope="function")
+def omen_test_setup(omen_session):
+    """
+    Function-level fixture
+    - Ensures clean state before each test
+    - Returns to dashboard
+    """
+
+    # -------------------------
+    # PRE-CONDITION
+    # -------------------------
+    omen_session.verify_omen_launched()
+    omen_session.verify_dashboard_loaded()
+
+    yield omen_session
+
+    # -------------------------
+    # POST-CONDITION
+    # -------------------------
+    # Small delay to stabilize UI before next test
+    time.sleep(2)
