@@ -1,0 +1,55 @@
+{
+  "app_launch_indicator": {
+    "locator": {
+      "xpath": "//Text[@Name='Application Loaded']"
+    }
+  },
+
+  "generic_action_button": {
+    "locator": {
+      "xpath": "//Button[contains(@Name,'Action')]"
+    }
+  },
+
+  "generic_action_input": {
+    "locator": {
+      "xpath": "//Edit[contains(@AutomationId,'actionInput')]"
+    }
+  },
+
+  "generic_action_submit": {
+    "locator": {
+      "xpath": "//Button[contains(@Name,'Submit')]"
+    }
+  },
+
+  "generic_response_container": {
+    "locator": {
+      "xpath": "//Pane[contains(@Name,'Response')]"
+    }
+  },
+
+  "generic_success_message": {
+    "locator": {
+      "xpath": "//Text[contains(@Name,'Success') or contains(@Name,'Completed')]"
+    }
+  },
+
+  "generic_error_message": {
+    "locator": {
+      "xpath": "//Text[contains(@Name,'Error') or contains(@Name,'Failed')]"
+    }
+  },
+
+  "loading_indicator": {
+    "locator": {
+      "xpath": "//ProgressBar"
+    }
+  },
+
+  "close_application_button": {
+    "locator": {
+      "xpath": "//Button[@Name='Close']"
+    }
+  }
+}
